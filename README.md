@@ -22,18 +22,32 @@ cd landing && python -m http.server 4173
 
 ---
 
-## ⚠️ Lo único que bloquea publicar
+## Estado: listo para publicar
 
-**Falta la URL de reserva de Moego.** Está aislada en una sola constante:
+Todos los datos reales están integrados desde MoeGo (14-jul-2026):
 
-```js
-// assets/js/main.js — línea 10
-const BOOKING_URL = null;   // ← poner acá la URL de Moego
-```
+- **Booking:** `https://booking.moego.pet/ol/HuggiesPetGrooming/landing` (activo, cableado en todos los CTA)
+- **Precios reales** de Settings > Services (Bath + Full Groom × salón/móvil × 4 tamaños + gatos)
+- **Add-ons reales** con precios (8 ítems)
+- **Dirección oficial:** 12239 Sheridan St, Hollywood, FL 33026
+- **Dominio:** huggiesgrooming.com (ya en Hostinger, plan Cloud Startup)
+- **Cobertura móvil:** 5 zonas (Hollywood, Pines, Cooper City, Miramar, Davie, Plantation, Sunrise, Tamarac, Coral Springs, Fort Lauderdale, Miami-Dade)
 
-Mientras siga en `null`, el botón "Agendar" **cae automáticamente al SMS** para no perder
-el lead. Al cargar la URL, los 6 botones de agendar del sitio apuntan solos a Moego.
-No hay que tocar nada más.
+### Cómo publicar
+
+`public_html` de huggiesgrooming.com en Hostinger está vacío (solo `default.php` de
+Hostinger, que se puede borrar). Opciones:
+
+1. **Manual (30 segundos):** arrastrar el contenido de esta carpeta (o el zip
+   `huggies-landing-deploy.zip` del directorio padre) al File Manager de Hostinger →
+   `public_html`, y borrar `default.php`.
+2. **Git:** el repo local ya está inicializado y commiteado. Crear un repo en GitHub,
+   pushear, y en hPanel → Avanzado → GIT apuntarlo a `public_html`. Deja auto-deploy
+   configurado a futuro.
+
+Existe también `index-deploy.html` (en el scratchpad de la sesión): variante
+single-file con CSS/JS/imágenes inline y fuentes desde fonts.gstatic.com, pensada
+para subir un solo archivo. Para el deploy normal usar esta carpeta tal cual.
 
 ---
 
