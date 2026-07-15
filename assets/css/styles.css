@@ -252,8 +252,6 @@ p { margin: 0 0 16px; }
   gap: 22px;
   height: 74px;
 }
-.brand { flex: none; display: flex; align-items: center; }
-.brand img { height: 54px; width: auto; }
 
 .nav {
   display: flex;
@@ -770,7 +768,6 @@ p { margin: 0 0 16px; }
      la barra inferior ya ofrece Book/SMS/Call siempre visibles.
      Sacarlo también evita que la fila del header desborde a 375px. */
   .header-actions .btn { display: none; }
-  .brand img { height: 46px; }
   .header-inner { gap: 12px; }
 
   .mobile-bar {
