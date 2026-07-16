@@ -1,171 +1,89 @@
 # Huggies Pet Grooming — Landing
 
-Landing estática, sin build ni dependencias. Se abre con doble clic o se sube tal cual
-a cualquier hosting (Netlify, Vercel, S3, o el hosting actual de Wix vía HTML embed).
+**En producción: https://huggiesgrooming.com**
+
+Landing estática bilingüe (EN/ES), sin build ni dependencias.
 
 ```
 landing/
 ├─ index.html
-├─ README.md
+├─ robots.txt · sitemap.xml
 └─ assets/
    ├─ css/styles.css
-   ├─ js/main.js
-   ├─ fonts/          Chewy + Montserrat auto-hospedadas (168 KB, subset latin)
-   └─ img/            logo en blanco/azul + 4 fotos del local optimizadas
+   ├─ js/main.js       ← diccionario I18N (146 claves EN/ES) + config
+   ├─ fonts/           Chewy + Montserrat auto-hospedadas (subset latin)
+   └─ img/             logos con alfa, fotos del local, favicons
 ```
 
-Para previsualizar en local:
+## Flujo de deploy
 
-```bash
-cd landing && python -m http.server 4173
+```
+editar → git commit → git push → auto-deploy de Hostinger (~7 s) → huggiesgrooming.com
 ```
 
----
+- Repo: `github.com/emilianocobe/huggies-landing` (rama `main` → `public_html`)
+- La conexión GitHub↔Hostinger tiene **implementación automática**: no hay pasos manuales.
+- Preview local: `python -m http.server 4173` dentro de `landing/`.
+- **Caché del CDN**: Hostinger cachea variantes de imagen por navegador y la purga no
+  siempre las invalida. Si se reemplaza una imagen, cambiar su URL (`?v=N`) en el HTML.
 
-## Estado: listo para publicar
+## Datos del negocio (confirmados por el cliente, 15-jul-2026)
 
-Todos los datos reales están integrados desde MoeGo (14-jul-2026):
+| Dato | Valor |
+|---|---|
+| Dirección (NAP) | 12239 Sheridan St, **Pembroke Pines, FL 33026** |
+| Teléfono | (954) 668-5679 |
+| Horario | Lun–Sáb 8:00–17:00, walk-ins y citas |
+| Booking | `https://booking.moego.pet/ol/HuggiesPetGrooming/landing` |
+| Desde | Julio 2014, negocio familiar |
+| Impuesto | 7% FL sales tax (no incluido en precios) |
 
-- **Booking:** `https://booking.moego.pet/ol/HuggiesPetGrooming/landing` (activo, cableado en todos los CTA)
-- **Precios reales** de Settings > Services (Bath + Full Groom × salón/móvil × 4 tamaños + gatos)
-- **Add-ons reales** con precios (8 ítems)
-- **Dirección oficial:** 12239 Sheridan St, Hollywood, FL 33026
-- **Dominio:** huggiesgrooming.com (ya en Hostinger, plan Cloud Startup)
-- **Cobertura móvil:** 5 zonas (Hollywood, Pines, Cooper City, Miramar, Davie, Plantation, Sunrise, Tamarac, Coral Springs, Fort Lauderdale, Miami-Dade)
+**Precios publicados** (confirmados por el cliente — la mayoría de clientes es de Broward):
 
-### Cómo publicar
+| Tamaño | Bath salón | Bath móvil | Groom salón | Groom móvil |
+|---|---|---|---|---|
+| Small (0–25 lb) | $65 | $75 | $75 | $85 |
+| Medium (26–40 lb) | $75 | $85 | $85 | $95 |
+| Large (41–70 lb) | $85 | $95 | $95 | $100 |
+| XL (71+ lb) | $95 | $100 | $100–150 | $110–150 |
+| Gatos (solo full groom) | — | — | $95 | $110 |
 
-`public_html` de huggiesgrooming.com en Hostinger está vacío (solo `default.php` de
-Hostinger, que se puede borrar). Opciones:
+Add-ons: dental sin anestesia $75–150 · uñas $30 · oídos $20 · deshedding $30 ·
+de-matting $30 · glándulas $15 · antipulgas $30 · shampoo hipoalergénico gratis ·
+**botellita de perfume para llevar $12 (producto, no servicio)**.
 
-1. **Manual (30 segundos):** arrastrar el contenido de esta carpeta (o el zip
-   `huggies-landing-deploy.zip` del directorio padre) al File Manager de Hostinger →
-   `public_html`, y borrar `default.php`.
-2. **Git:** el repo local ya está inicializado y commiteado. Crear un repo en GitHub,
-   pushear, y en hPanel → Avanzado → GIT apuntarlo a `public_html`. Deja auto-deploy
-   configurado a futuro.
+Curso de grooming: presencial, máx. 3 estudiantes, **12 semanas · 36 clases**,
+certificado, pago total por adelantado.
 
-Existe también `index-deploy.html` (en el scratchpad de la sesión): variante
-single-file con CSS/JS/imágenes inline y fuentes desde fonts.gstatic.com, pensada
-para subir un solo archivo. Para el deploy normal usar esta carpeta tal cual.
+Cobertura móvil: Pembroke Pines · Hollywood · Cooper City · Miramar · Davie · Weston ·
+Southwest Ranches · Plantation · Sunrise · Tamarac · Coral Springs · Fort Lauderdale ·
+Miami Lakes · Hialeah · Miami-Dade.
 
----
+## Cómo editar
 
-## Jerarquía de CTA
+- **Textos**: solo en los diccionarios `I18N.en` / `I18N.es` de `assets/js/main.js`
+  **y** en el HTML estático (el texto default debe coincidir con `I18N.en`, si no hay
+  flash de contenido viejo). Cada texto tiene su `data-i18n`.
+- **Precios**: tabla en `index.html` + claves `pricing.*`/`addon.*` en ambos idiomas +
+  bloque `hasOfferCatalog` del schema JSON-LD del `<head>`.
+- **CTA**: jerarquía Agendar (MoeGo) → SMS → Llamar → Curso. Los `href` base viven en el
+  HTML (funcionan sin JS); JS agrega el body del SMS según idioma.
 
-Implementada según lo pedido. El orden se respeta en el hero, en la sección final y en la
-barra fija de mobile.
+## Decisiones de diseño vigentes
 
-| # | Acción | Implementación |
-|---|--------|----------------|
-| 1 | Agendar turno | `BOOKING_URL` · hoy cae a SMS |
-| 2 | Enviar SMS | `sms:` con mensaje previo en el idioma activo |
-| 3 | Llamar | `tel:+19546685679` |
-| 4 | Curso | Sección propia + SMS con mensaje específico del curso |
+- **Naranjas accesibles**: `--orange` #FB6E00 solo decorativo; `--orange-cta` #C25100
+  para texto blanco (4,7:1); `--orange-ink` #B34700 para texto naranja (5,5:1). WCAG AA.
+- **Fuentes auto-hospedadas** (Google Fonts como `<link>` bloqueaba el render).
+- **Sin logo en el header** (el hero lo presenta justo debajo) — pedido del cliente.
+- **ES en registro de Miami**, no rioplatense.
 
-El formato `sms:+1...?&body=` es el que respetan tanto iOS como Android.
+## Pendientes
 
----
-
-## Idiomas
-
-Inglés y español con toggle en el header. El diccionario completo está en
-`assets/js/main.js` (136 claves, `I18N.en` / `I18N.es`).
-
-- **Detección**: parámetro `?lang=es` → `localStorage` → idioma del navegador → inglés.
-- **Persiste** la elección entre visitas.
-- Cambia también `<title>`, `meta description`, `<html lang>` y el texto del SMS.
-- El español está escrito en **registro de Miami**, no rioplatense: "cita" en vez de
-  "turno", tuteo neutro, sin voseo. El material original de la carpeta estaba en
-  rioplatense pero era para reclutamiento interno, no de cara al cliente.
-
-**Para editar textos**: se tocan solo las dos tablas de `I18N`. El HTML no se toca —
-cada texto tiene su `data-i18n`.
-
-### Pendiente de SEO
-
-El toggle es JS, así que Google indexa **solo la versión en inglés**. Si el español va a
-traer tráfico orgánico, hay que moverlo a una URL propia (`/es/`) con `hreflang`.
-Como decisión de arranque el toggle alcanza; como estrategia de SEO en español, no.
-
----
-
-## Decisiones tomadas y por qué
-
-**Fuentes auto-hospedadas.** Chewy y Montserrat son las de la marca y están en Google
-Fonts, pero un `<link>` a Google bloquea el render: si tarda o está bloqueado, la página
-queda en blanco. Pasó literalmente durante el desarrollo. Ahora se sirven desde el propio
-dominio: más rápido, sin terceros y sin ese riesgo.
-
-**Sistema de naranjas por accesibilidad.** El naranja de marca (`#FB6E00`) con texto
-blanco da **2,86:1** de contraste, debajo del mínimo de 4,5:1 de WCAG AA. No es un
-detalle cosmético: en EE.UU. la accesibilidad web es exigible por ADA y Florida es uno de
-los focos de litigio. La solución no fue descartar el naranja sino ordenarlo:
-
-| Token | Hex | Uso | Contraste |
-|-------|-----|-----|-----------|
-| `--orange` | `#FB6E00` | Solo decorativo, sin texto encima | — |
-| `--orange-cta` | `#C25100` | Superficies con texto blanco | 4,70:1 |
-| `--orange-ink` | `#B34700` | Texto naranja sobre fondo claro | 5,50:1 |
-
-A ojo se sigue leyendo como la marca. **Si el cliente rechaza el cambio**, la alternativa
-que también cumple es mantener `#FB6E00` con texto navy `#14264F` (5,16:1).
-
-**El botón "Agendar" del header desaparece en mobile.** La barra fija inferior ya lo
-ofrece como CTA primario y siempre visible. Además, mantenerlo desbordaba el header a
-375px.
-
----
-
-## Datos que la landing da por ciertos
-
-Todos salen de la carpeta. Los tres primeros **requieren confirmación del cliente**.
-
-| Dato | Fuente | Estado |
-|------|--------|--------|
-| Precios S/M/L/XL, salón y móvil | Fundamentos de Marketing | ⚠️ **De diciembre 2025 — confirmar** |
-| Promos 10% y $5 por referido | Fundamentos de Marketing | ⚠️ **Confirmar vigencia** |
-| Dirección "12239 Sheridan St, Cooper City" | Nº leído de la fachada + doc | ⚠️ **Falta CP y confirmar ciudad** |
-| Teléfono (954) 668-5679 | Vidriera + todos los copies | ✅ |
-| Horario Lun–Sáb 8–17, walk-ins | Vidriera del local | ✅ |
-| Especialidades (senior, discapacidad…) | Vidriera del local | ✅ |
-| Boarding y daycare | Vidriera del local | ✅ Existe, faltan precios |
-| Curso: 8 semanas, máx 3, pago adelantado | Planning mayo/junio 2026 | ✅ |
-
-Los precios se publican como rango con la aclaración de que el precio final depende del
-tamaño, el estado del pelaje y los add-ons. **No publicar sin que el cliente los confirme.**
-
----
-
-## Lo que falta
-
-- **Fotos del camión móvil.** El diferencial central del negocio no tiene una sola foto en
-  toda la carpeta. La sección "Cómo funciona el móvil" hoy va sin imagen. Es el pedido más
-  urgente.
-- **Paquetes reales.** La landing todavía no lista qué incluye cada paquete, porque los
-  Fundamentos dicen Basic Bath / Full Bath / Full Groom y la vidriera dice BASIC /
-  PREMIUM. Hay que sacar la lista de Moego, que es la fuente operativa.
-- **Reseñas.** No hay ni un testimonio en la carpeta. La sección de prueba social no está
-  construida por falta de material.
-- **Logo vectorial.** Los PNG salieron de recortar los que estaban incrustados en
-  `Logos.docx`. Para retina y para el favicon conviene el SVG original.
-- **Fotos sin decoración navideña.** Las del local tienen guirnalda de Navidad.
-- **Favicon.**
-- **Google Business Profile** enlazado y con NAP idéntico al de la landing.
-
----
-
-## Verificado
-
-- Sin scroll horizontal en 14 anchos, de 360px a 1440px.
-- Contraste WCAG AA en los 116 elementos de texto medidos sobre el render real.
-- Áreas táctiles ≥ 44px.
-- Toggle de idioma: cambia las 136 claves, el título, la meta y el idioma del SMS.
-- Los 4 CTA cableados y con fallback.
-- Fuentes cargan; sin peticiones a terceros; sin imágenes rotas.
-- Schema `PetGroomer` con dirección, horario y zona de cobertura.
-- `prefers-reduced-motion` respetado · foco visible por teclado · skip link.
-
-**No verificado visualmente**: la herramienta de captura de pantalla del entorno no
-funcionó, así que el layout se auditó por medición del DOM, no mirándolo. Conviene una
-pasada de ojo humana antes de mostrarlo al cliente.
+- **Fotos del camión móvil** — sigue sin existir ninguna; la sección "How mobile works" las espera.
+- **Google Business Profile** con NAP idéntico al del sitio (Pembroke Pines, FL 33026).
+  Es el activo #1 para "near me" (80% de la demanda de keywords).
+- **Corregir la dirección en MoeGo** (dice Hollywood; el cliente confirmó Pembroke Pines).
+- Reseñas/testimonios para prueba social.
+- Versión `/es/` con hreflang si se busca orgánico en español (el toggle JS no indexa).
+- Fotos del local sin decoración navideña.
+- Boarding & daycare: precios y detalle (hoy solo hay CTA de consulta por SMS).
