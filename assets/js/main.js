@@ -28,7 +28,7 @@ const I18N = {
 
     "a11y.nav": "Main",
     "a11y.quickactions": "Quick actions",
-    "a11y.img.storefront": "Huggies Pet Grooming salon storefront on Sheridan St, Hollywood FL",
+    "a11y.img.storefront": "Huggies Pet Grooming salon storefront on Sheridan St, Pembroke Pines FL",
 
     "nav.services": "Services",
     "nav.pricing": "Pricing",
@@ -42,7 +42,7 @@ const I18N = {
     "cta.call": "Call us",
     "cta.course": "Want to become a groomer? See our course",
 
-    "hero.h1": "Dog & Cat Grooming in Hollywood, FL — Salon & Mobile",
+    "hero.h1": "Dog & Cat Grooming in Pembroke Pines, FL — Salon & Mobile",
     "hero.sub": "A spa experience at our Sheridan St salon or right at your door. Gentle, professional dog grooming and cat grooming across Miami-Dade & Broward — caring for South Florida pets since 2014.",
 
     "trust.1.k": "Since 2014",
@@ -51,8 +51,8 @@ const I18N = {
     "trust.2.v": "8:00am – 5:00pm, walk-ins ok",
     "trust.3.k": "Salon + Mobile",
     "trust.3.v": "You choose",
-    "trust.4.k": "Miami-Dade",
-    "trust.4.v": "& Broward",
+    "trust.4.k": "Miami-Dade & Broward",
+    "trust.4.v": "Service area",
 
     "services.eyebrow": "Two ways to groom",
     "services.h2": "Come to us, or we come to you",
@@ -65,7 +65,7 @@ const I18N = {
     "services.mobile.li3": "You keep working while we groom",
     "services.mobile.cta": "Book mobile grooming",
     "services.salon.h3": "Grooming at our salon",
-    "services.salon.p": "Visit us at 12239 Sheridan St. Walk-ins are welcome, and it's the best option for full styling and bigger dogs.",
+    "services.salon.p": "Visit us at 12239 Sheridan St, Pembroke Pines, FL 33026. Walk-ins are welcome, and it's the best option for full styling and bigger dogs.",
     "services.salon.li1": "Walk-ins welcome, Mon–Sat",
     "services.salon.li2": "Full grooming and styling",
     "services.salon.li3": "Lower price than mobile",
@@ -75,7 +75,7 @@ const I18N = {
     "pricing.h2": "No surprises. Just clear pricing.",
     "pricing.lede": "Prices depend on your pet's size and the package you choose — not on the day, not on who's asking. These are our real starting prices.",
     "pricing.bath.h3": "Bath Package",
-    "pricing.bath.p": "Bath, blow-dry, sanitary trim, ear cleaning, teeth brushing, nail clipping & filing, perfume and bandana.",
+    "pricing.bath.p": "Bath, blow-dry, sanitary trim, eye and ear cleaning, gland expression, teeth brushing, nail clipping & filing, perfume and bandana.",
     "pricing.full.h3": "Full Groom Package",
     "pricing.full.p": "Everything in the Bath Package, plus a full body haircut or trim styled to your pet.",
     "pricing.th.size": "Size",
@@ -92,17 +92,17 @@ const I18N = {
     "pricing.xl": "Extra large",
     "pricing.xl.ex": "71 lb and up",
     "pricing.cats": "Cats",
-    "pricing.cats.ex": "All sizes",
-    "pricing.fine": "Starting prices. Doodles, double-coated breeds and coats that need extra time may cost more — we'll always confirm the final price with you before we start, never after. Prices don't include 6% FL sales tax.",
+    "pricing.cats.ex": "Full groom only",
+    "pricing.fine": "Starting prices. Doodles, double-coated breeds and coats that need extra time may cost more — we'll always confirm the final price with you before we start, never after. Prices don't include 7% FL sales tax.",
     "pricing.addons.h3": "Add only what your pet needs",
-    "addon.1": "Dental plaque removal · $85–100",
+    "addon.1": "Dental plaque removal · $75–150",
     "addon.2": "Nail clipping & filing · $30",
     "addon.3": "Deep ear cleaning · $20",
     "addon.4": "Deshedding · $30",
     "addon.5": "De-matting · $30",
     "addon.6": "Anal glands expression · $15",
     "addon.7": "Flea & tick shampoo · $30",
-    "addon.8": "Perfume · $12",
+    "addon.8": "Take-home perfume bottle · $12",
     "addon.9": "Hypoallergenic shampoo · free",
 
     "spec.eyebrow": "What sets us apart",
@@ -134,7 +134,7 @@ const I18N = {
     "how.3.h": "They come back fresh",
     "how.3.p": "Clean, brushed, trimmed and calm — usually in about an hour, without ever leaving your street.",
     "how.cov.h3": "Where the van goes",
-    "how.cov.p": "Hollywood · Pembroke Pines · Cooper City · Miramar · Davie · Plantation · Sunrise · Tamarac · Coral Springs · Fort Lauderdale · Miami-Dade",
+    "how.cov.p": "Pembroke Pines · Hollywood · Cooper City · Miramar · Davie · Weston · Southwest Ranches · Plantation · Sunrise · Tamarac · Coral Springs · Fort Lauderdale · Miami Lakes · Hialeah · Miami-Dade",
     "how.cov.cta": "Check if we reach your address",
 
     "promo.1.h": "off your first groom",
@@ -144,11 +144,11 @@ const I18N = {
 
     "course.eyebrow": "Learn grooming",
     "course.h2": "Become a professional groomer",
-    "course.p": "Learn the craft hands-on, in groups of no more than three students, taught by groomers who do this every single day. Eight weeks, sixteen classes, and a certificate at the end.",
+    "course.p": "Learn the craft hands-on, in groups of no more than three students, taught by groomers who do this every single day. Twelve weeks, thirty-six classes, and a certificate at the end.",
     "course.f1.k": "Format",
     "course.f1.v": "In person, max 3 students",
     "course.f2.k": "Length",
-    "course.f2.v": "8 weeks · 16 classes",
+    "course.f2.v": "12 weeks · 36 classes",
     "course.f3.k": "Finish with",
     "course.f3.v": "Practical exam + certificate",
     "course.cta": "Ask about the course",
@@ -186,8 +186,8 @@ const I18N = {
     "footer.contact": "Contact",
     "footer.follow": "Follow",
 
-    "_title": "Dog & Cat Grooming in Hollywood, FL — Salon & Mobile Pet Grooming | Huggies",
-    "_desc": "Dog grooming and cat grooming in Hollywood, FL — at our Sheridan St salon or with our mobile grooming van across Miami-Dade & Broward. Clear pricing by size, senior & special-needs friendly. Book online or text (954) 668-5679."
+    "_title": "Dog & Cat Grooming in Pembroke Pines, FL — Salon & Mobile Pet Grooming | Huggies",
+    "_desc": "Dog grooming and cat grooming in Pembroke Pines, FL — at our Sheridan St salon or with our mobile grooming van across Miami-Dade & Broward. Clear pricing by size, senior & special-needs friendly. Book online or text (954) 668-5679."
   },
 
   es: {
@@ -195,7 +195,7 @@ const I18N = {
 
     "a11y.nav": "Principal",
     "a11y.quickactions": "Acciones rápidas",
-    "a11y.img.storefront": "Fachada del salón Huggies Pet Grooming en Sheridan St, Hollywood FL",
+    "a11y.img.storefront": "Fachada del salón Huggies Pet Grooming en Sheridan St, Pembroke Pines FL",
 
     "nav.services": "Servicios",
     "nav.pricing": "Precios",
@@ -209,7 +209,7 @@ const I18N = {
     "cta.call": "Llámanos",
     "cta.course": "¿Quieres ser groomer? Conoce nuestro curso",
 
-    "hero.h1": "Grooming para perros y gatos en Hollywood, FL — Salón y a domicilio",
+    "hero.h1": "Grooming para perros y gatos en Pembroke Pines, FL — Salón y a domicilio",
     "hero.sub": "Una experiencia de spa en nuestro salón de Sheridan St o en la puerta de tu casa. Grooming profesional y con paciencia para perros y gatos en Miami-Dade y Broward — cuidando mascotas del sur de Florida desde 2014.",
 
     "trust.1.k": "Desde 2014",
@@ -218,8 +218,8 @@ const I18N = {
     "trust.2.v": "8:00am – 5:00pm, sin cita ok",
     "trust.3.k": "Salón + Móvil",
     "trust.3.v": "Tú eliges",
-    "trust.4.k": "Miami-Dade",
-    "trust.4.v": "y Broward",
+    "trust.4.k": "Miami-Dade & Broward",
+    "trust.4.v": "Zona de servicio",
 
     "services.eyebrow": "Dos formas de hacerlo",
     "services.h2": "Ven al salón, o vamos nosotros",
@@ -232,7 +232,7 @@ const I18N = {
     "services.mobile.li3": "Tú sigues con tu día mientras lo hacemos",
     "services.mobile.cta": "Agendar servicio a domicilio",
     "services.salon.h3": "Grooming en nuestro salón",
-    "services.salon.p": "Visítanos en 12239 Sheridan St. Puedes venir sin cita, y es la mejor opción para cortes completos y perros grandes.",
+    "services.salon.p": "Visítanos en 12239 Sheridan St, Pembroke Pines, FL 33026. Puedes venir sin cita, y es la mejor opción para cortes completos y perros grandes.",
     "services.salon.li1": "Puedes venir sin cita, lun–sáb",
     "services.salon.li2": "Corte y estilismo completo",
     "services.salon.li3": "Más económico que el móvil",
@@ -242,7 +242,7 @@ const I18N = {
     "pricing.h2": "Sin sorpresas. Precios claros.",
     "pricing.lede": "El precio depende del tamaño de tu mascota y del paquete que elijas — no del día ni de quién pregunte. Estos son nuestros precios base reales.",
     "pricing.bath.h3": "Paquete de Baño",
-    "pricing.bath.p": "Baño, secado, recorte sanitario, limpieza de oídos, cepillado de dientes, corte y limado de uñas, perfume y bandana.",
+    "pricing.bath.p": "Baño, secado, recorte sanitario, limpieza de ojos y oídos, expresión de glándulas, cepillado de dientes, corte y limado de uñas, perfume y bandana.",
     "pricing.full.h3": "Paquete Full Groom",
     "pricing.full.p": "Todo lo del Paquete de Baño, más un corte de pelo completo al estilo de tu mascota.",
     "pricing.th.size": "Tamaño",
@@ -259,17 +259,17 @@ const I18N = {
     "pricing.xl": "Extra grande",
     "pricing.xl.ex": "71 lb o más",
     "pricing.cats": "Gatos",
-    "pricing.cats.ex": "Todos los tamaños",
-    "pricing.fine": "Precios base. Doodles, razas de doble pelaje y pelajes que requieren más tiempo pueden costar más — siempre te confirmamos el precio final antes de empezar, nunca después. Los precios no incluyen el 6% de impuesto de FL.",
+    "pricing.cats.ex": "Solo full groom",
+    "pricing.fine": "Precios base. Doodles, razas de doble pelaje y pelajes que requieren más tiempo pueden costar más — siempre te confirmamos el precio final antes de empezar, nunca después. Los precios no incluyen el 7% de impuesto de FL.",
     "pricing.addons.h3": "Agrega solo lo que tu mascota necesita",
-    "addon.1": "Limpieza de placa dental · $85–100",
+    "addon.1": "Limpieza de placa dental · $75–150",
     "addon.2": "Corte y limado de uñas · $30",
     "addon.3": "Limpieza profunda de oídos · $20",
     "addon.4": "Deshedding · $30",
     "addon.5": "Desenredado · $30",
     "addon.6": "Glándulas anales · $15",
     "addon.7": "Shampoo antipulgas · $30",
-    "addon.8": "Perfume · $12",
+    "addon.8": "Botellita de perfume para llevar · $12",
     "addon.9": "Shampoo hipoalergénico · gratis",
 
     "spec.eyebrow": "Lo que nos hace distintos",
@@ -301,7 +301,7 @@ const I18N = {
     "how.3.h": "Vuelve fresco y feliz",
     "how.3.p": "Limpio, cepillado, recortado y tranquilo — normalmente en una hora, sin salir nunca de tu cuadra.",
     "how.cov.h3": "Hasta dónde llega la van",
-    "how.cov.p": "Hollywood · Pembroke Pines · Cooper City · Miramar · Davie · Plantation · Sunrise · Tamarac · Coral Springs · Fort Lauderdale · Miami-Dade",
+    "how.cov.p": "Pembroke Pines · Hollywood · Cooper City · Miramar · Davie · Weston · Southwest Ranches · Plantation · Sunrise · Tamarac · Coral Springs · Fort Lauderdale · Miami Lakes · Hialeah · Miami-Dade",
     "how.cov.cta": "Verifica si llegamos a tu dirección",
 
     "promo.1.h": "en tu primer grooming",
@@ -311,11 +311,11 @@ const I18N = {
 
     "course.eyebrow": "Aprende grooming",
     "course.h2": "Conviértete en groomer profesional",
-    "course.p": "Aprende el oficio con las manos, en grupos de máximo tres estudiantes, con groomers que hacen esto todos los días. Ocho semanas, dieciséis clases y un certificado al final.",
+    "course.p": "Aprende el oficio con las manos, en grupos de máximo tres estudiantes, con groomers que hacen esto todos los días. Doce semanas, treinta y seis clases y un certificado al final.",
     "course.f1.k": "Modalidad",
     "course.f1.v": "Presencial, máx. 3 estudiantes",
     "course.f2.k": "Duración",
-    "course.f2.v": "8 semanas · 16 clases",
+    "course.f2.v": "12 semanas · 36 clases",
     "course.f3.k": "Terminas con",
     "course.f3.v": "Examen práctico + certificado",
     "course.cta": "Pregunta por el curso",
@@ -353,8 +353,8 @@ const I18N = {
     "footer.contact": "Contacto",
     "footer.follow": "Síguenos",
 
-    "_title": "Grooming para perros y gatos en Hollywood, FL — Salón y a domicilio | Huggies",
-    "_desc": "Grooming para perros y gatos en Hollywood, FL — en nuestro salón de Sheridan St o con nuestra van a domicilio en Miami-Dade y Broward. Precios claros por tamaño, especialistas en perros mayores y con necesidades especiales. Agenda en línea o escribe al (954) 668-5679."
+    "_title": "Grooming para perros y gatos en Pembroke Pines, FL — Salón y a domicilio | Huggies",
+    "_desc": "Grooming para perros y gatos en Pembroke Pines, FL — en nuestro salón de Sheridan St o con nuestra van a domicilio en Miami-Dade y Broward. Precios claros por tamaño, especialistas en perros mayores y con necesidades especiales. Agenda en línea o escribe al (954) 668-5679."
   }
 };
 
