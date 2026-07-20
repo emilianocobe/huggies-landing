@@ -18,14 +18,22 @@ landing/
 ## Flujo de deploy
 
 ```
-editar → git commit → git push → auto-deploy de Hostinger (~7 s) → huggiesgrooming.com
+editar → python build.py → git commit → git push → auto-deploy (~7 s) → huggiesgrooming.com
 ```
+
+> **`python build.py` no es opcional.** Hostinger sirve CSS y JS con
+> `Cache-Control: max-age=604800` (7 días). Un visitante que ya estuvo en el sitio
+> seguiría viendo el `main.js` viejo por una semana — y como el JS reescribe todos los
+> textos vía el diccionario `I18N`, los cambios de copy **no aparecerían** aunque el HTML
+> esté actualizado. El script pone un hash del contenido en la URL (`?v=abc12345`), así
+> el navegador descarga la versión nueva apenas cambia algo.
 
 - Repo: `github.com/emilianocobe/huggies-landing` (rama `main` → `public_html`)
 - La conexión GitHub↔Hostinger tiene **implementación automática**: no hay pasos manuales.
 - Preview local: `python -m http.server 4173` dentro de `landing/`.
-- **Caché del CDN**: Hostinger cachea variantes de imagen por navegador y la purga no
-  siempre las invalida. Si se reemplaza una imagen, cambiar su URL (`?v=N`) en el HTML.
+- **Caché del CDN**: `build.py` resuelve CSS y JS automáticamente. Para **imágenes**,
+  que el script no versiona, hay que cambiar su URL a mano (`?v=N`) al reemplazarlas —
+  la purga de caché de hPanel no siempre invalida las variantes por navegador.
 
 ## Datos del negocio (confirmados por el cliente, 15-jul-2026)
 
